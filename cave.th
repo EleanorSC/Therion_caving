@@ -1,0 +1,91 @@
+encoding  utf-8
+source Cong.th
+#change name to the main therion file being used
+
+select PigeonHoleM@pigeonHole.Cong
+select wolfsHoleM@wolfsHole.Cong
+select priestsHoleM@priestsHole.Cong
+
+
+###############
+#elevation input
+###############
+
+#export map -proj [elevation 0] -layout local -o Outputs/pigeonwolvesE0.pdf
+
+export map -proj plan -layout plan -o Outputs/pigeonwolves.pdf
+
+#export map -proj plan -fmt kml -o Outputs/pigeonwolves.kml
+
+layout plan
+copy local
+ 
+#map-image 100 -10 ne wolfsHoleE0.pdf
+map-header 40 20 ne
+ 
+map-comment "Co. Galway, Ireland<br>\
+Drawn using Therion by Graham Mullan.<br>\
+<br>\
+Survey of Wolves' Hole by Cameron Bullen, Stuart Alldred and Simon Hadfield, 2013.<br>\
+Sumps and extensions survey by Martyn Farr, 2004-7.<br>\
+<br>\
+Survey of Pigeon Hole by Stuart Alldred, Cameron Bullen, Rory Colville, Eleanor Conole,<br>\
+Ashley Gregg, Simon Hadfield, Sioned Haughton, Anya Keatley and Jacob Podesta 2013-2015.<br>\
+Sump surveys by Martyn Farr and Nick Geh 1991-2006.<br>\
+<br>\
+Survey of Priest's Hole by Stuart Alldred, Cameron Bullen and Jacob Podesta, 2013.<br>\
+<br>\
+Published by the University of Bristol Spelaeological Society.<br>\
+Copyright 2004-15 CC BY NC SA"
+
+scale-bar 100 metres
+
+colour-legend off
+
+code tex-map
+  \cavename={\size [45] Pigeon Hole and Wolves' Hole} 
+    \cavelength={} %empty
+    \cavedepth={}  %empty
+    \colorlegendfalse
+    \legendtextsize= {\size [20]}
+    
+#endcode    
+
+endlayout
+
+layout local
+copy common
+doc-title "Pigeon Hole & Wolves' Hole"
+#rotate -90
+grid-size 50 50 10 metres
+
+legend-width 25 cm
+
+#base-scale 1 500
+scale 1 500
+
+symbol-hide point remark
+symbol-hide group cave-centreline
+
+#grid off
+#map-header 50 70 off
+#map-header-bg on
+
+statistics explo off
+statistics topo off
+
+code metapost
+
+#base 1:750 scale 1:2750 (A3 charterhouse,GB)
+#fonts_setup(8,16,24,40,60)
+
+#scale 1:1000 (A0 width charterhouse,GB)
+#fonts_setup(7,10,14,20,30)
+
+#base 1:500 scale 1:2750 
+#fonts_setup(8,20,26,40,60)      
+    
+endlayout
+
+#get the master layout settings
+input common_layout.th
