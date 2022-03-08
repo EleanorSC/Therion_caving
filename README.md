@@ -2,6 +2,8 @@
 
 Therion cave surveying software - script for ireland expedition
 
+See https://therion.speleo.sk/wiki/contrib:complimentarycaveapps for details
+
 Script renders complete, always up-to-date cave maps. The map is automatically
 updated after loop closure, blunder fix or map symbol set change.
 It's particularly well suitable for documenting large and complicated cave
