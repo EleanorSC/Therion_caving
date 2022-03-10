@@ -2,6 +2,15 @@
 
 Therion cave surveying software - script for ireland expedition
 
+Summary
+Svx plugin provides a mechanism to export inkscape line drawings as survex (.svx) input files. Use-cases include:
+
+producing a length or depth estimate for a drawn-up survey;
+generating a skeleton to hang data off in a resurvey project;
+georeferencing a drawn-up survey (see below);
+Some example surveys (Inkscape traced drawings) will be included when I get round to it.
+
+
 See https://therion.speleo.sk/wiki/contrib:complimentarycaveapps for details
 
 Script renders complete, always up-to-date cave maps. The map is automatically
